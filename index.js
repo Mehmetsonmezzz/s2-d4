@@ -144,6 +144,21 @@ let siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
 console.log(siralisayilar);
 /* kodlar buraya */
 let tekraredensayilar = [];
+let sayiVeTekrarSayisi = {};
+
+sayilar.map((sayi) => {
+  sayiVeTekrarSayisi[sayi] = !sayiVeTekrarSayisi[sayi]
+    ? 1
+    : sayiVeTekrarSayisi[sayi] + 1;
+});
+
+console.log(sayiVeTekrarSayisi);
+
+for (let key in sayiVeTekrarSayisi) {
+  console.log(
+    `${key} sayısı ${sayiVeTekrarSayisi[key]} kere tekrar edilmiştir`
+  );
+}
 //3f çözümü
 //3f. `tekraredensayilar` adında bir dizi oluşturun. sayilar dizisi içerisindeki bazı sayılar birden fazla kere yazılmış. sayilar dizisi içerisinde birden fazla kez yazılmış sayıları tespit ederek kaç kere tekrar edildiğini belirten bir string oluşturulup `tekraredensayilar` dizisine aktarılmasını istiyoruz. Örnek string: "{sayı} sayısı {tekrarSayisi} kere tekrar edilmiştir"
 //		ÖRNEK: sayilar dizisi içerisinde 45 sayısı 3 kere yazılmış. "45 sayısı 3 tekrar edilmiştir" stringini `tekraredensayilar` dizisine aktaracağız.
